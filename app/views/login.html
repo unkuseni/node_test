@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <form action="/" method="POST">
+        <label class="bl" for="user">Username</label>
+        <input class="bl" type="text" id="user" />
+        <label class="bl" for="pass">Password</label>
+        <input class="bl" type="text" id="pass" />
+
+        <button class="bl" type="submit" onclick="sendLogin()">Login</button>
+      </form>
+    </main>
+
+    <script>
+// Sends a POST request to the server with the provided username and password.
+// 
+// This function retrieves the values of the "username" and "password" input fields
+// using the `document.getElementById` method. It then sends a POST request to the
+// server with the provided credentials in the request body. The request is made using
+// the `fetch` function, and the request headers specify that the content type is
+// "application/json". The response from the server is handled asynchronously using
+// async/await to improve efficiency.
+
+async function sendLogin() {
+    let username = document.getElementById("user").value;
+    let password = document.getElementById("pass").value;
+
+    try {
+        const response = await fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user: username, pass: password }),
+        });
+        
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+    </script>
+  </body>
+</html>

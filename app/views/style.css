@@ -1,0 +1,28 @@
+:root {
+
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+
+main {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .bl {
+        display: block;
+    }
