@@ -112,3 +112,23 @@ project/
 │   └── index.html        # Main entry point for the application
 └── ...                # Other source code directories
 ```
+
+## Microservices Architecture
+
+```
+project/  # Top-level project directory
+├── services/        # Directory for individual microservices
+│   ├── service1/     # Example microservice directory
+│   │   ├── src/       # Source code for the service
+│   │   │   └── ...    # Service specific code files
+│   │   ├── Dockerfile # Dockerfile for containerizing the service (optional)
+│   │   └── ...        # Other service-specific configuration files
+│   ├── service2/     # Another microservice directory (and so on)
+│   └── ...
+├── shared/            # Directory for shared components (optional)
+│   ├── models/        # Shared data models (if applicable)
+│   └── ...            # Other shared code or configuration
+├── gateway/          # Optional API Gateway directory (if used)
+│   └── ...            # Gateway code and configuration files
+└── ...               # Other project-level files (e.g., configuration, scripts)
+```
