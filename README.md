@@ -48,28 +48,34 @@ Imagine a restaurant:
 
 Here's a simple example of how you can structure your project using MVC:
 
-project/\n
-├── app/\n
-│   ├── controllers/\n
-│   │   ├── HomeController.js\n
-│   │   └── ...\n
-│   ├── models/\n
-│   │   ├── User.js\n
-│   │   └── ...\n
-│   ├── views/\n
-│   │   ├── home/\n
-│   │   │   ├── index.html\n
-│   │   │   └── ...\n
-│   │   └── ...\n
-│   └── ...\n
-├── public/\n
-│   ├── index.js\n
-│   └── ...\n
-├── routes/\n
-│   ├── web.js\n
-│   └── ...\n
-├── ...\n
-└── ...\n
+```
+project/
+├── app/               # Application logic
+│   ├── controllers/    # Controller classes for handling user requests
+│   │   └── ...         # Controller files (e.g., HomeController.js, UserController.js)
+│   ├── models/         # Data models representing the application's data
+│   │   └── ...         # Model files (e.g., User.js, Product.js)
+│   └── views/          # UI templates and components
+│       ├── layouts/     # Base layouts for views (optional)
+│       │   └── ...     # Layout files (e.g., main.html)
+│       └── ...         # View directories for specific features or controllers
+│           ├── home/     # Views related to the home page or HomeController
+│           │   ├── index.html  # Home page template
+│           │   └── ...        # Other views for the home feature
+│           └── ...        # View directories for other controllers
+├── public/             # Publicly accessible assets (static files)
+│   ├── css/             # Cascading Style Sheets
+│   │   └── ...
+│   ├── images/           # Images and other media
+│   │   └── ...
+│   ├── index.html        # Main entry point for the application (depending on the framework)
+│   └── ...
+├── routes/             # Routing configuration (optional)
+│   └── web.js           # Routing configuration file (example in Express.js)
+├── config/             # Configuration files (optional)
+│   └── ...
+└── ...
+```
 
 In this example, the app directory contains the Model, View, and Controller. The controllers directory contains the controller classes, the models directory contains the model classes, and the views directory contains the view files. The public directory contains the entry point of your application (index.php). The routes directory contains the routing configuration.
 
@@ -83,3 +89,26 @@ Remember, this is just a basic structure, and you can customize it based on your
 | Microservices Architecture | Highly scalable, promotes modularity, independent development/deployment | Increased complexity due to distributed services, requires strong API management |
 | Component-Based Architecture | Promotes code reuse, reduces development time, simplifies maintenance | Requires well-defined interfaces and communication protocols |
 | Serverless Architecture | Reduced operational overhead, scales automatically, focuses on application logic | Vendor lock-in, potential cold start delays, limited debugging capabilities |
+
+## Component Based Architecture
+
+```
+project/
+├── src/               # Source code for components and application logic
+│   ├── components/    # Reusable component files
+│   │   ├── Button.js   # Example component file
+│   │   └── ...        # Other component files
+│   ├── App.js          # Main application component (optional)
+│   ├── services/       # Services for data access or business logic (optional)
+│   │   └── ...        # Service files (e.g., ApiService.js)
+│   ├── utils/          # Utility functions or helpers (optional)
+│   │   └── ...        # Utility files
+│   └── ...            # Other source code directories (e.g., for tests)
+├── public/             # Publicly accessible assets (static files)
+│   ├── css/             # Cascading Style Sheets
+│   │   └── ...
+│   ├── images/           # Images and other media
+│   │   └── ...
+│   └── index.html        # Main entry point for the application
+└── ...                # Other source code directories
+```
